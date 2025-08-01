@@ -1,7 +1,7 @@
-export default function LightOffEffect({ visible }) {
+export default function LightOffEffect({ visible, animation }) {
   return (
     <div
-      className={`overlay-layer ${visible ? 'visible' : ''}`}
+      className={animation ? `overlay-layer ${visible ? 'visible' : ''}` : ''}
     />
   )
 }

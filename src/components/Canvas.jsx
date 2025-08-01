@@ -1,5 +1,5 @@
 import { useDrop } from 'react-dnd';
-import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
+import { useState, useImperativeHandle, forwardRef } from 'react';
 
 const Canvas = forwardRef((props, ref) => {
   const [items, setItems] = useState([]);
@@ -27,8 +27,14 @@ const Canvas = forwardRef((props, ref) => {
           item.type === 'candle' ? { ...item, lit: true } : item
         )
       )
+    },
+    blowAll: () => {
+      setItems(prev => 
+        prev.map(item =>
+          item.type === 'candle' ? { ...item, lit: false } : item
+      ))
     }
-  }))
+  }), [])
 
   return (
     <div
