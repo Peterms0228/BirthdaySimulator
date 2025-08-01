@@ -1,6 +1,6 @@
 {
   "name": "birthday-app",
-  "homepage": "https://peterms0228.github.io/BirthdaySimulator/",
+  "homepage": "https://peterms0228.github.io/birthday-app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "artifact": "vite build && cp -r dist/* ../artifact/birthday-app && echo 'Artifact created in ../artifact/birthday-app'"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
