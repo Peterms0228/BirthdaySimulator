@@ -40,7 +40,7 @@ const Canvas = forwardRef((props, ref) => {
         <img
           key={i}
           id={`candle-${i}`}
-          src={item.lit ? '/assets/candle-lit.jpg' : '/assets/candle.jpg'}
+          src={item.lit ? './assets/candle-lit.jpg' : './assets/candle.jpg'}
           className="absolute w-10 h-10 pointer-events-none"
           style={{ left: item.x, top: item.y, width: 40, height: 40 }}
           alt="candle"
