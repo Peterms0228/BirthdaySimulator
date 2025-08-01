@@ -104,7 +104,7 @@ export default function Phase2() {
       const volume = Math.sqrt(sumSquares / buffer.length)
       setMeterValue(volume)
 
-      if (volume > 0.2) {  
+      if (volume > 0.4) {  
         stopMic()
         blowAllCandles()
         return
@@ -156,13 +156,10 @@ export default function Phase2() {
 
         {/* Mic volume handler */}
         {listening && (
-        <div style={{
-          position: 'fixed', bottom: 20, left: 40,
-          width: 200, height: 20, background: '#444'
-        }}>
-          <div style={{
-            width: `${Math.min(meterValue * 400, 200)}px`,
-            height: '100%', background: 'lime'
+          <div className='volume-meter-vertical'>
+          <div className='volume-level'
+          style={{
+            height: `${Math.min(meterValue * 600, 200)}px`, 
           }} />
         </div>
         )}
@@ -189,7 +186,7 @@ export default function Phase2() {
           <button 
             onClick={startMic}
             style={{ position: 'fixed', bottom: 20, right: '0%', transform: 'translateX(-50%)', zIndex: 1000 }}>
-            🎤 Hold & Blow
+            🎤
           </button>
 
           {/* Center: Canvas */}
