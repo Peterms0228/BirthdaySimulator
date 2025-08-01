@@ -69,9 +69,10 @@ const rickRollClick = () => {
            <div className="flex h-full">
 
             {/* Center: Canvas */}
-            <div className="flex-1 relative bg-[url('./assets/cake.png')] h-screen w-screen bg-contain bg-center bg-no-repeat" onClick={rickRollClick}>
+            <div className="flex-1 relative bg-[url('./cake.png')] h-screen w-screen bg-contain bg-center bg-no-repeat" onClick={rickRollClick}>
               <Canvas ref={canvasRef}/>
             </div>
+
                     
             {/* Left: Candle */}
             <div id="candleItem" className="fixed bottom-2 left-1/2 transform -translate-x-1/2 z-20 text-white bg-opacity-50 rounded-full p-2">
