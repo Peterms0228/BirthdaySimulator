@@ -1,5 +1,5 @@
 export default function CandleLightEffect({ positions, visible }) {
-  if (!visible || positions.length === 0) return null
+  if (!visible) return null
 
   return (
       <svg

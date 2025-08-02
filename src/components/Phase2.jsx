@@ -33,22 +33,12 @@ export default function Phase2() {
       setPositions(pos);
       setSpotVisible(true);
       playBgm();
+      setAnimation(false);
+      setOverlayVisible(false);
     }, 500)
     document.getElementById('lightOffBtn').style.display = 'none';
     document.getElementById('candleItem').style.display = 'none';
-    document.getElementById('lightOnBtn').style.display = 'block';
-  }
-
-  const lightOn = () => {
-    stopBgm()
-    setOverlayVisible(false);
-    setAnimation(true);
-    setTimeout(() => {
-      setSpotVisible(false);
-    }, 500)
-    document.getElementById('lightOffBtn').style.display = 'block';
-    document.getElementById('candleItem').style.display = 'block';
-    document.getElementById('lightOnBtn').style.display = 'none';
+    document.getElementById('micBtn').style.display = 'block';
   }
 
   function playBgm() {
@@ -125,7 +115,6 @@ export default function Phase2() {
     setOverlayVisible(false)
     setAnimation(false)
     canvasRef.current?.blowAll()
-    document.getElementById('lightOnBtn').style.display = 'none';
     triggerParty();
   }
 
@@ -179,14 +168,9 @@ export default function Phase2() {
           {/* Light off button */}
           <button id="lightOffBtn" className="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 text-white bg-black bg-opacity-50 rounded-full p-2"
             onClick={lightOff}>
-            ▼
-          </button>
-
-          {/* Mic button */}
-          <button 
-            onClick={startMic}
-            style={{ position: 'fixed', bottom: 20, right: '0%', transform: 'translateX(-50%)', zIndex: 1000 }}>
-            🎤
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+            </svg>
           </button>
 
           {/* Center: Canvas */}
@@ -199,10 +183,14 @@ export default function Phase2() {
             <CandleItem />
           </div>
 
-          {/* Light on button */}
-          <button id="lightOnBtn" className="fixed bottom-2 left-1/2 transform -translate-x-1/2 z-20 text-white bg-black bg-opacity-50 rounded-full p-2" style={{ display: 'none' }}
-            onClick={lightOn}>
-            ▲
+          {/* Mic button */}
+          <button id='micBtn'
+            className="fixed bottom-2 left-1/2 transform -translate-x-1/2 z-20 text-white bg-black bg-opacity-50 rounded-full p-2 animate-pulse" style={{ display: 'none' }}
+            onClick={startMic}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+              <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+              <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
+            </svg>
           </button>
         </div>
 
