@@ -12,9 +12,9 @@ export default function DraggableCandle() {
   return (
     <img
       ref={dragRef}
-      src="./assets/candle-lit.jpg"
+      src="./assets/candle-lit.png"
       alt="candle"
-      className={`w-10 h-10 cursor-move ${isDragging ? ' opacity-50' : ''}`}
+      className={`w-8 h-24 cursor-move ${isDragging ? ' opacity-50' : ''}`}
     />
   )
 }

@@ -14,7 +14,7 @@ export default function CandleLightEffect({ positions, visible }) {
               <circle
                 key={i}
                 cx={c.cx}
-                cy={c.cy}
+                cy={c.cy - 35}
                 r="80"
                 fill="black"
               />
