@@ -174,7 +174,7 @@ export default function Phase2() {
           </button>
 
           {/* Center: Canvas */}
-          <div className="flex-1 relative bg-[url('./assets/cake.png')] h-screen w-screen bg-contain bg-center bg-no-repeat" onClick={rickRollClick}>
+          <div className="flex-1 relative bg-[url('./cake.png')] h-screen w-screen bg-contain bg-center bg-no-repeat" onClick={rickRollClick}>
             <Canvas ref={canvasRef}/>
           </div>
                   
