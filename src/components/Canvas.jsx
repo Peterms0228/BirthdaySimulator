@@ -47,7 +47,7 @@ const Canvas = forwardRef((props, ref) => {
           key={i}
           id={`candle-${i}`}
           src={item.lit ? './assets/candle-lit.gif' : './assets/candle.png'}
-          className="absolute w-8 h-24 pointer-events-none"
+          className="absolute w-4 h-12 pointer-events-none"
           style={{ left: item.x, top: item.y }}
           alt="candle"
         />
