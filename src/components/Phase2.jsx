@@ -164,7 +164,7 @@ export default function Phase2() {
          {/* Textboard for wish */}
         <TextBoard
           visible={showBanner}
-          text="生日快樂 橘子子子 🎈🎂🎉"
+          text="生日快樂 橘橘橘子 🎈🎂🎉"
           speed={5}>
         </TextBoard>
 
