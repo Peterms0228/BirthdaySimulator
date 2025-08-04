@@ -102,3 +102,34 @@ button:focus-visible {
   background: lime;
   transition: height 0.1s ease;
 }
+
+@keyframes textboard {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.textboard-container {
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  right: 0;
+  height:  40px;
+  overflow: hidden;
+  pointer-events: none; /* so you can click the button or other canvas elements beneath if needed */
+  z-index: 1000;
+}
+
+.textboard-content {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: textboard 10s linear infinite;
+}
+
+.textboard-item {
+  padding: 0 2em;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: gold;
+}
