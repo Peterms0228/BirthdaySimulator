@@ -8,7 +8,7 @@ import CandleLightEffect from './CandleLightEffect'
 import TextBoard from './TextBoard'
 import confetti from 'canvas-confetti';
 
-export default function Phase2() {
+export default function Phase2({ userName }) {
   const canvasRef = useRef()
   const [overlayVisible, setOverlayVisible] = useState(false)
   const [spotVisible, setSpotVisible] = useState(false)
@@ -20,7 +20,7 @@ export default function Phase2() {
   const [showBanner, setShowBanner] = useState(true);
   const audioCtxRef = useRef()
   const analyserRef = useRef()
-
+  const bannerText = `Happy Birthday ${userName || 'to you'}! 🎈🎂🎉`;
 
   const lightOff = () => {
     setAnimation(true);
@@ -86,6 +86,7 @@ export default function Phase2() {
 
   useEffect(() => {
     if (!listening) return
+    stopBgm();
     const buffer = new Float32Array(analyserRef.current.fftSize)
     const loop = () => {
       analyserRef.current.getFloatTimeDomainData(buffer)
@@ -164,12 +165,12 @@ export default function Phase2() {
          {/* Textboard for wish */}
         <TextBoard
           visible={showBanner}
-          text="生日快樂 橘橘橘子 🎈🎂🎉"
-          speed={5}>
+          text={bannerText}
+          speed={6}>
         </TextBoard>
 
         {/* Bgm Audio */}
-        <audio id="bgm" src="./assets/bgm.mp3" preload="auto" />
+        <audio id="bgm" src="./assets/song-bd.mp3" preload="auto" />
 
         {/* Body */}
         <div className="flex h-full">
@@ -183,7 +184,7 @@ export default function Phase2() {
           </button>
 
           {/* Center: Canvas */}
-          <div className="flex-1 relative bg-[url('./cake.png')] h-screen w-screen bg-contain bg-center bg-no-repeat" onClick={rickRollClick}>
+          <div className="flex-1 relative bg-[url('./cake_02.png')] h-screen w-screen bg-contain bg-center bg-no-repeat" onClick={rickRollClick}>
             <Canvas ref={canvasRef}/>
           </div>
                   
